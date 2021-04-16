@@ -1,0 +1,82 @@
+
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body><form action="EDIT_STAFF2" method="post"><table width="261" border="1">
+  <tr>
+    <td width="101">FIRST NAME </td>
+    <td width="144"><label>
+      <input type="text" name="textfield" VALUE="{{val[2]}}"/>
+    </label></td>
+  </tr>
+  <tr>
+    <td>SECOND NAME </td>
+    <td><label>
+      <input type="text" name="textfield2" VALUE="{{val[3]}}"/>
+    </label></td>
+  </tr>
+  <tr>
+    <td>STAFF CATEGORY </td>
+    <td><label>
+    <select name="select"><option value="sales">sales</option>
+      {% for i in vals %}
+        <option value="{{i[0]}}">{{i[4]}}</option>
+      {%endfor%}
+    </select>
+</label></td>
+  </tr>
+  <tr>
+    <td>GENDER</td>
+    <td><label>
+      <input name="radiobutton" type="radio" value="male" {% if val[5] =="Male" %} checked{% endif %}/>M
+	   <input name="radiobutton" type="radio" value="female" {% if val[5] =="Female" %} checked{% endif %} />F
+    </label></td>
+  </tr>
+  <tr>
+    <td>PLACE</td>
+    <td><label>
+      <input type="text" name="textfield3" VALUE="{{val[6]}}" />
+    </label></td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td><label>
+      <input type="text" name="textfield4" VALUE="{{val[7]}}"/>
+    </label></td>
+  </tr>
+  <tr>
+    <td>PIN</td>
+    <td><label>
+      <input type="text" name="textfield5" VALUE="{{val[8]}}"/>
+    </label></td>
+  </tr>
+  <tr>
+    <td>PHONE</td>
+    <td><label>
+      <input type="text" name="textfield6" VALUE="{{val[9]}}"/>
+    </label></td>
+  </tr>
+  <tr>
+    <td>EMAIL</td>
+    <td><label>
+      <input type="text" name="textfield7" VALUE="{{val[10]}}"/>
+    </label></td>
+  </tr>
+  <tr>
+
+  <tr>
+    <td colspan="2"><label>
+      <div align="center">
+        <input type="submit" name="Submit" value="UPDATE" />
+        </div>
+    </label></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
+
+
+</body>
+<!--</html>-->
+{% endblock %}

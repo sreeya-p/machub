@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="/login">
+  <table class="table" id="customers">
+    <tr>
+      <th colspan="2"><div align="center">LOGIN</div></th>
+    </tr>
+    <tr>
+      <td>USERNAME </td>
+      <td><label>
+        <input type="text" name="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <th>PASSWORD</th>
+      <td><label>
+        <input type="password" name="textfield2" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="LOGIN" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

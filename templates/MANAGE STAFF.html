@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+</form>
+<table width="713" border="1">
+  <tr>
+    <td width="90" height="27">NAME</td>
+    <td width="88">STAFF CATEGORY </td>
+    <td width="88">GENDER </td>
+
+    <td width="51">PLACE</td>
+    <td width="66">POST</td>
+    <td width="56">PIN</td>
+    <td width="80">PHONE</td>
+    <td width="96">EMAIL</td>
+    <td width="134">&nbsp;</td>
+  </tr>
+  {% for i in val %}
+  <tr>
+    <td>&nbsp;{{i[2]}} {{i[3]}}</td>
+    <td>&nbsp;{{i[4]}}</td>
+    <td> {{i[5]}}</td>
+    <td>&nbsp;{{i[6]}}</td>
+    <td>&nbsp;{{i[7]}}</td>
+    <td>{{i[8]}}</td>
+    <td>{{i[9]}}</td>
+    <td>{{i[10]}}</td>
+    <td><a href="/EDIT_STAFF?lid={{i[1]}}">EDIT </a></td>
+    <td><a href="/DELETE STAFF?lid={{i[1]}}"> DELETE</a></td>
+
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
