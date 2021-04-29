@@ -1,0 +1,66 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'staffhomeindex.html' %}
+{% block body %}
+
+
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/viewoffers">
+  <table class="table">
+    <tr>
+      <td colspan="6"> <div align="center">VIEW OFFER </div></td>
+    </tr>
+    <tr>
+      <td width="89">ITEM NAME</td>
+      <td width="71">OFFER(%)</td>
+      <td width="119">START DATE </td>
+      <td width="92">END DATE </td>
+      <td width="61">EDIT</td>
+      <td width="82">DELETE</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i[0]}}&nbsp;</td>
+      <td>&nbsp;{{i[3]}}</td>
+      <td>&nbsp;{{i[4]}}</td>
+      <td>&nbsp;{{i[5]}}</td>
+      <td><a href="/offeredit?offerid{{i[1]}}">EDIT</a></td>
+      <td><a href="offerdlt?offerid{{i[1]}}">DELETE</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
