@@ -1,0 +1,31 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<div align="center">
+<form id="form1" name="form1" method="post" action="">
+  <table class="table" id="customers">
+    <tr bgcolor="green">
+      <th><div align="center">NAME</div></th>
+      <th><div align="center">FEEDBACK</div></th>
+      <th><div align="center">DATE</div></th>
+    </tr>
+  {% for i in val %}
+    <tr>
+      <td><div align="center">{{i[4]}} {{i[5]}}&nbsp;</div></td>
+      <td><div align="center">{{i[2]}}&nbsp;</div></td>
+      <td><div align="center">{{i[3]}}&nbsp;</div></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+  </div>
+<!--</body>-->
+<!--</html>-->
+{% endblock %}
