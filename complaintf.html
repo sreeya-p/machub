@@ -1,0 +1,35 @@
+{% extends 'staffhomeindex.html' %}
+{% block body %}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<form id="form1" name="form1" method="post">
+  <div align="center">
+    <table class="table table-striped">
+      
+      <tr>
+        <th><div align="center">SHOP</div></th>
+        <th><div align="center">COMPLAINT</div></th>
+        <th><div align="center">DATE</div></th>
+        <th scope="col"><div align="center"></div></th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><div align="center">{{i[5]}} {{i[6]}}&nbsp;</div></td>
+        <td>
+        <div align="center">{{i[2]}}</div></td>
+        <td><div align="center">{{i[3]}}</div></td>
+        <th scope="col"><div align="center"><a href="replyf?id={{i[0]}}">REPLY</a></div></th>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+<!--</body>-->
+<!--</html>-->
+{% endblock %}
