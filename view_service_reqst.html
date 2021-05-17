@@ -1,0 +1,60 @@
+{% extends 'staffhomeindex.html' %}
+{% block body %}
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+</form>
+<table class="table" id="customers">
+  <tr>
+    <th colspan="8"><div align="center">SERVICE REQUEST</div></th>
+  </tr>
+
+    <!--<td>S.NO</td>-->
+    <td>SHOP</td>
+    <td>ITEM</td>
+    <td>REQUEST</td>
+    <td>WARRANTY</td>
+    <td>&nbsp;</td>
+  </tr>
+{% for i in val %}
+  <tr>
+    <!--<td>{{i[8]}}</td>-->
+    <td>&nbsp;{{i[0]}}</td>
+    <td>{{i[1]}}</td>
+    <td>{{i[5]}}</td>
+    <td>&nbsp;{{i[6]}}</td>
+    <td><a href="/replys?id={{i[2]}}">REPLY</a></td>
+
+
+  </tr>
+  {% endfor %}
+</table>
+</body>
+<!--</html>-->
+{% endblock %}
