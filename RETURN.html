@@ -1,0 +1,58 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table" id="customers">
+    <tr bgcolor="green">>
+      <td width="77">PRODUCT ID</td>
+      <td width="37">BILL ID </td>
+      <td width="77">PRODUCT NAME </td>
+      <td width="50">IMAGE</td>
+      <td width="40">DATE</td>
+      <td width="146">&nbsp;</td>
+
+    {%for i in val%}
+    <tr>
+      <td>&nbsp;{{i[3]}}</td>
+      <td>{{i[4]}}</td>
+      <td>{{i[0]}}</td>
+    <td><img src="./static/upload/{{i[1]}}" width="100" height="100"></td>
+      <td>&nbsp;{{i[5]}}</td>
+      <td><a href="/Assign_delivery2?rid={{i[2]}}">Assign Delivery Agent </a></td>
+    </tr>
+    {%endfor%}
+  </table>
+</form>
+</body>
+</html>
