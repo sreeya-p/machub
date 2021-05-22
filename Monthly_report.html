@@ -1,0 +1,62 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<div align="center">
+<form id="form1" name="form1" method="post" action="GETREPORT">
+
+<table class="table" id="customers">
+  <tr bgcolor="green">
+    <th colspan="8"><div align="center">MONTHLY REPORT</div></th>
+  </tr>
+  <tr>
+    <th colspan="8"><form name="form2" method="post" action="/GETREPORT">
+      <label>
+        MONTH
+
+        <select name="select" required>
+
+          <option value="" >Select </option>
+          <option value="1" >JANUARY </option>
+             <option value="2" >FEBRUARY </option>
+             <option value="3" >MARCH </option>
+             <option value="4" >APRIL </option>
+             <option value="5" >MAY </option>
+             <option value="6" >JUNE </option>
+             <option value="7" >JULY </option>
+             <option value="8" >AUGUST </option>
+             <option value="9" >SEPTEMBER </option>
+             <option value="10" >OCTOBER </option>
+             <option value="11" >NOVEMBER </option>
+             <option value="12" >DECEMBER </option>
+
+
+
+        </select>
+        </label>
+      <label>
+      <input type="submit" name="Submit" value="SEARCH">
+      </label>
+{% if val %}
+  <table class="table table-striped">
+    <tr>
+      <th><div align="center">Total cash</div></th>
+    </tr>
+  {% for i in val %}
+    <tr>
+      <td><div align="center">{{i[0]}}</div></td>
+    </tr>
+    {% endfor %}
+  </table>
+        {% endif %}
+</form>
+  </div>
+<!--</body>-->
+<!--</html>-->
+{% endblock %}
